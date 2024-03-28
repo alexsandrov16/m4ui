@@ -1,0 +1,94 @@
+:root {
+    --blue-50: #f2f9fd;
+    --blue-100: #e4f0fa;
+    --blue-200: #c2e1f5;
+    --blue-300: #8ccaed;
+    --blue-400: #4bace0;
+    --blue-500: #2994ce;
+    --blue-600: #1a76af;
+    --blue-700: #165e8e;
+    --blue-800: #165076;
+    --blue-900: #184462;
+    --blue-950: #102b41;
+
+    --darken-50: #f4f7f7;
+    --darken-100: #e2e9eb;
+    --darken-200: #c8d5d9;
+    --darken-300: #a2b8be;
+    --darken-400: #75929b;
+    --darken-500: #597781;
+    --darken-600: #4d636d;
+    --darken-700: #43535b;
+    --darken-800: #3c484e;
+    --darken-900: #2f373c;
+    --darken-950: #20272c;
+
+    --danger-50: #fdf3f3;
+    --danger-100: #fce4e4;
+    --danger-200: #facece;
+    --danger-300: #f5acac;
+    --danger-400: #ed7c7c;
+    --danger-500: #e04b4b;
+    --danger-600: #cd3535;
+    --danger-700: #ac2929;
+    --danger-800: #8f2525;
+    --danger-900: #772525;
+    --danger-950: #400f0f;
+
+    --warning-50: #fafbeb;
+    --warning-100: #f2f6cb;
+    --warning-200: #e9ee9a;
+    --warning-300: #dde04b;
+    --warning-400: #dad735;
+    --warning-500: #cbc027;
+    --warning-600: #ae9920;
+    --warning-700: #8c721c;
+    --warning-800: #745b1f;
+    --warning-900: #644c1f;
+    --warning-950: #3a290e;
+
+    --success-50: #f0fdf4;
+    --success-100: #dcfce6;
+    --success-200: #baf8ce;
+    --success-300: #85f0a9;
+    --success-400: #4be07d ;
+    --success-500: #20c759;
+    --success-600: #15a446;
+    --success-700: #14813a;
+    --success-800: #156632;
+    --success-900: #13542b;
+    --success-950: #052e15;
+
+
+    /**
+     * Light Mode
+     */
+    --color: var(--darken-800);
+    --bg: white;
+    --bg-darken: var(--darken-50);
+    --link-color: var(--blue-500);
+    --link-hover: var(--blue-600);
+
+
+}
+
+/**
+ * Color Schema
+ */
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --color: var(--darken-50);
+        --bg: var(--darken-800);
+        --bg-darken: var(--bg);
+        --link-color: var(--blue-400);
+        --link-hover: var(--blue-300);
+    }
+}
+
+html[data-theme=dark] {
+    --color: var(--darken-50);
+    --bg: var(--darken-800);
+    --bg-darken: var(--bg);
+    --link-color: var(--blue-400);
+    --link-hover: var(--blue-300);
+}

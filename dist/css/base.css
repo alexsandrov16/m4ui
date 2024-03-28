@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url(color.css);
+@import url(mediaquery.css);
+
+/*!
+ * M4U v0.2
+ * Copyright 2024 - Licensed under MIT
+ */
+/**
+ * Styles
+ */
+:root {
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Noto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --font-weight: 400;
+    --line-height: 1.25;
+
+    /**
+     * Borders
+     */
+     --border:1px;
+     --radius:12px;
+
+    /**
+     * Space
+     */
+    --spacing: 1em;
+}
+
+/**
+ * Color Schema
+ */
+
+/**
+ * Document
+ * Content-box
+ */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+    color: var(--color);
+    background: var(--bg);
+}
+
+body.pannel {
+    background: var(--bg-darken);
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    padding: 1em;
+}
+
+/**
+ * Container
+ */
+.container,
+.container-fluid {
+    width: 100%;
+    padding: 0 var(--spacing);
+}
+
+
+/**
+ * Tipografia
+ */
+:is(h1, h2, h3, h4, h5, h6) {
+    font-weight: 400;
+}
+
+:is(h1, h2, h3, h4, h5, h6).light {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.25em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1.125em;
+}
+
+hgroup :first-child {
+    font-size: 2.5em;
+}
+
+hgroup :last-child {
+    font-size: 1.25em !important;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/**
+ * Cards & Boxes
+ */
+.box{
+    padding: var(--spacing);
+    border-radius: var(--radius);
+}

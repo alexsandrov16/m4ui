@@ -1,0 +1,77 @@
+/* X-Small devices (portrait phones, less than 576px)*/
+/* No media query for `xs` since this is the default in Bootstrap*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    :root {
+        --font-size: 100%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    :root {
+        --font-size: 106.25%;
+    }
+    hgroup :first-child{
+        font-size: 3em;
+    }
+    hgroup :last-child{
+        font-size: 1.5em !important;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    :root {
+        --font-size: 112.5%
+    }
+}
+
+
+/**
+ * Container
+ */
+ .container,
+ .container-fluid {
+   width: 100%;
+   margin-right: auto;
+   margin-left: auto;
+   padding-right: var(--pico-spacing);
+   padding-left: var(--pico-spacing);
+ }
+ 
+ @media (min-width: 576px) {
+   .container {
+     max-width: 510px;
+     padding-right: 0;
+     padding-left: 0;
+   }
+ }
+ @media (min-width: 768px) {
+   .container {
+     max-width: 700px;
+   }
+ }
+ @media (min-width: 1024px) {
+   .container {
+     max-width: 950px;
+   }
+ }
+ @media (min-width: 1280px) {
+   .container {
+     max-width: 1200px;
+   }
+ }
+ @media (min-width: 1536px) {
+   .container {
+     max-width: 1450px;
+   }
+ }
+ 
