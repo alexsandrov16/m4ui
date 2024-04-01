@@ -60,21 +60,52 @@
     --success-950: #052e15;
 
 
+
+
+        --waikawa-gray-50: #f2f7fb;
+        --waikawa-gray-100: #e7f0f8;
+        --waikawa-gray-200: #d3e2f2;
+        --waikawa-gray-300: #b9cfe8;
+        --waikawa-gray-400: #9cb6dd;
+        --waikawa-gray-500: #839dd1;
+        --waikawa-gray-600: #6a7fc1;
+        --waikawa-gray-700: #6374ae ;
+        --waikawa-gray-800: #4a5989;
+        --waikawa-gray-900: #414e6e;
+        --waikawa-gray-950: #262c40;
+
+
+            --ceniza-50: #f7f7f8;
+            --ceniza-100: #efedf1;
+            --ceniza-200: #dad8df;
+            --ceniza-300: #bab6c3;
+            --ceniza-400: #948ea2;
+            --ceniza-500: #777087;
+            --ceniza-600: #615a6f;
+            --ceniza-700: #4f495b;
+            --ceniza-800: #443f4d;
+            --ceniza-900: #3c3842;
+            --ceniza-950:  #1c1a1f00 ;
+        
+    }
+    
+
+
     /**
      * Light Mode
-     */
+     *//*
     --color: var(--darken-800);
     --bg: white;
     --bg-darken: var(--darken-50);
     --link-color: var(--blue-500);
     --link-hover: var(--blue-600);
 
-
+*/
 }
 
 /**
  * Color Schema
- */
+ *//*
 @media only screen and (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
         --color: var(--darken-50);
@@ -91,4 +122,5 @@ html[data-theme=dark] {
     --bg-darken: var(--bg);
     --link-color: var(--blue-400);
     --link-hover: var(--blue-300);
-}
+}*/
+
