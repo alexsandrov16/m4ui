@@ -20,7 +20,8 @@
      * Borders
      */
     --border: 1px;
-    --radius: 12px;
+    --radius-sm: 4px;
+    --radius-lg: 12px;
 
     /**
      * Space
@@ -51,17 +52,8 @@ body {
     font-size: var(--font-size);
     font-weight: var(--font-weight);
     line-height: var(--line-height);
-
-
-    color: light-dark(var(--darken-900), var(--darken-100));
-    background-color: light-dark(var(--darken-100), var(--darken-800));
-
-    /*color: var(--color);
-    background: var(--bg);*/
-}
-
-body.pannel {
-    background: var(--bg-darken);
+    color: light-dark(var(--white-900), var(--white-100));
+    background-color: light-dark(var(--white-50), var(--white-950));
 }
 
 main {
@@ -127,11 +119,15 @@ hgroup :last-child {
 
 a {
     text-decoration: none;
-    color: var(--link-color);
+    color: light-dark(var(--primary-600), var(--primary-400));
 }
 
 a:hover {
-    color: var(--link-hover);
+    color: light-dark(var(--primary-700), var(--primary-500));
+}
+
+p {
+    margin-bottom: 1em;
 }
 
 /**
@@ -139,13 +135,15 @@ a:hover {
  */
 .box {
     padding: var(--spacing);
-    border-radius: var(--radius);
+    border-radius: var(--radius-lg);
+    background-color: light-dark(var(--black-50), var(--white-900));
+    border: 1px solid var(--border-color);
 }
 
 /**
  * Header
  */
-header{
+header {
     padding: 0 var(--spacing);
     height: 64px;
     display: flex;
@@ -156,21 +154,119 @@ header{
 /**
  * Button
  */
-[role=button]{
-    background-color: var(--waikawa-gray-700);
-    color: white !important;
+:is(button, [role=button], input:is([type=submit], [type=reset])) {
+    background-color: var(--primary-500);
+    color: var(--white-50) !important;
     cursor: pointer;
-    display: block;
-    height: 38px;
-    padding: 0 var(--spacing);
-    align-content: center;
-    letter-spacing: .25;
-    font-size: 1em;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 24px;
+    letter-spacing: .075em;
+    font-size: .75em;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: background ease-in .15s;
+    margin-bottom: .75em;
 }
 
-[role=button]:hover{
-    background-color: var(--waikawa-gray-800);
+:is(button, [role=button], input:is([type=submit], [type=reset])).w-100 {
+    width: 100%;
+    justify-content: center;
 }
-[role=button]:active{
-    background-color: var(--waikawa-gray-900);
+
+:is(button, [role=button], input:is([type=submit], [type=reset])):hover {
+    background-color: var(--primary-600);
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])):active {
+    background-color: var(--primary-700);
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])):is(:disabled, [aria-disabled]) {
+    background-color: light-dark(var(--white-100), var(--white-700));
+    color: light-dark(var(--white-400), var(--white-400)) !important;
+    cursor: default;
+}
+
+/*OUTLINE*/
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline {
+    background-color: transparent;
+    border: 1px solid light-dark(var(--primary-500), var(--primary-300));
+    color: light-dark(var(--primary-500), var(--primary-300)) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:hover {
+    background-color: light-dark(#dbeefe67, #dbeefe1e);
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:active {
+    background-color: light-dark(#bfe2fe6e, #dbeefe42);
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline.secondary {
+    background-color: transparent;
+    border-color: light-dark(var(--white-300), var(--white-400)) !important;
+    color: light-dark(var(--white-400), var(--white-300)) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline.secondary:hover {
+    border-color: light-dark(var(--white-400), var(--white-300)) !important;
+    color: light-dark(var(--white-500), var(--white-200)) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline.secondary:active {
+    border-color: light-dark(var(--white-500), var(--white-200)) !important;
+    color: light-dark(var(--white-600), var(--white-100)) !important;
+}
+
+/*BTN TEXT*/
+:is(button, [role=button], input:is([type=submit], [type=reset])).text {}
+
+:is(button, [role=button], input:is([type=submit], [type=reset]))[aria-busy=true] {
+    cursor: default;
+    background-color: light-dark(var(--primary-400),var(--primary-300)) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset]))[aria-busy=true]::before {
+    margin-right: 8px;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])) .me {
+    margin-right: 8px;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])) .ms {
+    margin-left: 8px;
+}
+
+/**
+ * Load
+ */
+*[aria-busy=true] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[aria-busy=true]::before {
+    content: '';
+    display: block;
+    height: 18px;
+    width: 18px;
+    border: 2px solid transparent;
+    border-top-color: initial;
+    border-radius: 10px;
+    animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: -359deg
+    }
 }
