@@ -164,8 +164,8 @@ header {
     padding: 0 24px;
     letter-spacing: .075em;
     font-size: .75em;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-weight: 700;
+    text-transform: capitalize;
     border-radius: var(--radius-sm);
     transition: background ease-in .15s;
     margin-bottom: .75em;
@@ -180,9 +180,9 @@ header {
     background-color: var(--primary-600);
 }
 
-:is(button, [role=button], input:is([type=submit], [type=reset])):active {
+/*:is(button, [role=button], input:is([type=submit], [type=reset])):active {
     background-color: var(--primary-700);
-}
+}*/
 
 :is(button, [role=button], input:is([type=submit], [type=reset])):is(:disabled, [aria-disabled]) {
     background-color: light-dark(var(--white-100), var(--white-700));
@@ -191,35 +191,39 @@ header {
 }
 
 /*OUTLINE*/
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline{
+    background: transparent;
+    border: 2px solid;
+}
 :is(button, [role=button], input:is([type=submit], [type=reset])).outline {
-    background-color: transparent;
-    border: 1px solid light-dark(var(--primary-500), var(--primary-300));
-    color: light-dark(var(--primary-500), var(--primary-300)) !important;
+    border-color: light-dark(var(--primary-500), var(--primary-400));
+    color: light-dark(var(--primary-500), var(--primary-400)) !important;
 }
 
 :is(button, [role=button], input:is([type=submit], [type=reset])).outline:hover {
-    background-color: light-dark(#dbeefe67, #dbeefe1e);
+    background-color: light-dark(#93d1fd4a,transparent)/*#e8f6ff*/;
+    border-color: var(--primary-500);
+    color: var(--primary-500) !important;
 }
 
-:is(button, [role=button], input:is([type=submit], [type=reset])).outline:active {
+/*:is(button, [role=button], input:is([type=submit], [type=reset])).outline.primary:active {
     background-color: light-dark(#bfe2fe6e, #dbeefe42);
-}
-
-:is(button, [role=button], input:is([type=submit], [type=reset])).outline.secondary {
-    background-color: transparent;
-    border-color: light-dark(var(--white-300), var(--white-400)) !important;
+}*/
+/*
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline {
+    border-color: light-dark(var(--white-400), var(--white-400));
     color: light-dark(var(--white-400), var(--white-300)) !important;
 }
 
-:is(button, [role=button], input:is([type=submit], [type=reset])).outline.secondary:hover {
-    border-color: light-dark(var(--white-400), var(--white-300)) !important;
-    color: light-dark(var(--white-500), var(--white-200)) !important;
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:hover {
+    border-color: light-dark(var(--white-400), var(--white-300));
+    color: light-dark(var(--white-500), var(--white-200));
 }
 
-:is(button, [role=button], input:is([type=submit], [type=reset])).outline.secondary:active {
-    border-color: light-dark(var(--white-500), var(--white-200)) !important;
-    color: light-dark(var(--white-600), var(--white-100)) !important;
-}
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:active {
+    border-color: light-dark(var(--white-500), var(--white-200));
+    color: light-dark(var(--white-600), var(--white-100));
+}*/
 
 /*BTN TEXT*/
 :is(button, [role=button], input:is([type=submit], [type=reset])).text {}
