@@ -1,16 +1,16 @@
 :root {
 
-    --primary-50: #eff8ff;
-    --primary-100: #dbeefe;
-    --primary-200: #bfe2fe;
-    --primary-300: #93d1fd;
-    --primary-400: #61b7f9;
-    --primary-500: #3c98f5;
-    --primary-600: #1a73e9;
-    --primary-700: #1e64d7;
-    --primary-800: #1f51ae;
-    --primary-900: #1e478a;
-    --primary-950: #172c54;
+    --primary-50: var(--blue-50);
+    --primary-100: var(--blue-100);
+    --primary-200: var(--blue-200);
+    --primary-300: var(--blue-300);
+    --primary-400: var(--blue-400);
+    --primary-500: var(--blue-500);
+    --primary-600: var(--blue-600);
+    --primary-700: var(--blue-700);
+    --primary-800: var(--blue-800);
+    --primary-900: var(--blue-900);
+    --primary-950: var(--blue-950);
 
 
     --blue-50: #eff6ff;
@@ -142,6 +142,46 @@
     --white-900: #3d3d3d;
     --white-950: #292929;
 
+    /*EXTRAS*/
+    --oxford-blue-50: #f6f7f9;
+    --oxford-blue-100: #eceef2;
+    --oxford-blue-200: #d4dae3;
+    --oxford-blue-300: #afb9ca;
+    --oxford-blue-400: #8494ac;
+    --oxford-blue-500: #647693;
+    --oxford-blue-600: #505f79;
+    --oxford-blue-700: #3d485c;
+    --oxford-blue-800: #394253;
+    --oxford-blue-900: #333a47;
+    --oxford-blue-950: #22262f;
+
+
+    --dodger-blue-50: #eff8ff;
+    --dodger-blue-100: #dbeefe;
+    --dodger-blue-200: #bfe2fe;
+    --dodger-blue-300: #93d1fd;
+    --dodger-blue-400: #61b7f9;
+    --dodger-blue-500: #3c98f5;
+    --dodger-blue-600: #1a73e9;
+    --dodger-blue-700: #1e64d7;
+    --dodger-blue-800: #1f51ae;
+    --dodger-blue-900: #1e478a;
+    --dodger-blue-950: #172c54;
+
+    --malibu-50: #f0f8ff;
+    --malibu-100: #e0f1fe;
+    --malibu-200: #b9e3fe;
+    --malibu-300: #68c7fd;
+    --malibu-400: #36b6fa;
+    --malibu-500: #0c9deb;
+    --malibu-600: #007dc9;
+    --malibu-700: #0163a3;
+    --malibu-800: #065486;
+    --malibu-900: #0b466f;
+    --malibu-950: #072c4a;
+
+
+
 
 
 
@@ -157,6 +197,8 @@
 
 */
 
+    --body-bg:light-dark(var(--white-50), var(--white-950));
+    --body-color:light-dark(var(--white-900), var(--white-100));
     --border-color: light-dark(var(--white-200), var(--white-700));
 }
 
