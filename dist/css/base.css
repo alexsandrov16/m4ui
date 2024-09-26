@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import url(color.css);
+@import url(buttons.css);
+@import url(mediaquery.css);
+
+/*!
+ * M4U v0.2
+ * Copyright 2024 - Licensed under MIT
+ */
+/**
+ * Styles
+ */
+:root {
+    color-scheme: light dark;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Noto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --font-weight: 400;
+    --line-height: 1.25;
+
+    /**
+     * Borders
+     */
+    --border: 1px solid var(--border-color);
+    --radius-sm: 4px;
+    --radius-lg: 12px;
+
+    /**
+     * Space
+     */
+    --spacing: 1em;
+}
+
+/**
+ * Color Schema
+ */
+[data-theme=light] {
+    color-scheme: light;
+}
+
+[data-theme=dark] {
+    color-scheme: dark;
+}
+
+/**
+ * Document
+ * Content-box
+ */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+    color: var(--body-color);
+    background-color: var(--body-bg);
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    padding: 1em;
+}
+
+/**
+ * Container
+ */
+.container,
+.container-fluid {
+    width: 100%;
+    padding: 0 var(--spacing);
+}
+
+
+/**
+ * Tipografia
+ */
+:is(h1, h2, h3, h4, h5, h6) {
+    font-weight: 400;
+}
+
+:is(h1, h2, h3, h4, h5, h6).light {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.25em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1.125em;
+}
+
+hgroup :first-child {
+    font-size: 2.5em;
+}
+
+hgroup :last-child {
+    font-size: 1.25em !important;
+}
+
+a {
+    text-decoration: none;
+    color: light-dark(#1a73e9, #61b7f9);
+}
+
+a:hover {
+    color: light-dark(#3c98f5, #93d1fd);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/**
+ * Cards & Boxes
+ */
+.box {
+    padding: var(--spacing);
+    border-radius: var(--radius-lg);
+    background-color: light-dark(var(--black-50), var(--white-900));
+    border: var(--border);
+}
+
+/**
+ * Header
+ */
+header {
+    padding: 0 var(--spacing);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/**
+ * Load
+ */
+*[aria-busy=true] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[aria-busy=true]::before {
+    content: '';
+    display: block;
+    height: 18px;
+    width: 18px;
+    border: 2px solid transparent;
+    border-top-color: initial;
+    border-radius: 10px;
+    animation: loader 1s linear infinite;
+}
+
+[aria-busy=true].spinner::before {
+    content: '';
+    display: block;
+    height: 30px;
+    width: 30px;
+    border: 3px solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 5em;
+    animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: -359deg
+    }
+}

@@ -1,0 +1,131 @@
+/**
+ * Button
+ */
+ :is(button, [role=button], input:is([type=submit], [type=reset])) {
+    --btn-bg:light-dark(var(--white-50), var(--white-900));
+    --btn-contrast:light-dark(var(--black-800), var(--white-50));
+    --btn-contrast-hover:light-dark(var(--black-500), var(--white-100));
+    align-items: center;
+    appearance: none;
+    background-color: var(--btn-bg);
+    border: 1px solid light-dark(var(--black-300),var(--white-400));
+    border-radius: var(--radius-sm);
+    color: light-dark(var(--black-500),var(--white-200));
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    gap: .5em;
+    height: 36px;
+    letter-spacing: .075em;
+    margin-bottom: .75em;
+    padding: 0 16px;
+    text-transform: capitalize;
+    transition: background border ease-in .5s;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])):hover {
+    border: 1px solid light-dark(var(--black-400),var(--white-300));
+    color: light-dark(var(--black-800),var(--white-50));
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])):is(:disabled, [aria-disabled=true]) {
+    --disabled-btn:light-dark(var(--white-200), var(--white-600)) !important;
+    background-color: var(--disabled-btn);
+    border-color: var(--disabled-btn);
+    color: light-dark(var(--white-500), var(--white-300)) !important;
+    cursor: default;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).round {
+    border-radius: 50em;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).w-100 {
+    width: 100%;
+    justify-content: center;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).contrast {
+    background-color: var(--btn-contrast);
+    border-color: var(--btn-contrast);
+    color: light-dark(var(--white-100),var(--white-900));
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).contrast:hover {
+    background-color: var(--btn-contrast-hover);
+    border-color: var(--btn-contrast-hover);
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).primary {
+    background-color: var(--primary-500);
+    border-color: var(--primary-500);
+    color: white !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).primary:hover {
+    background-color: var(--primary-600);
+    border-color: var(--primary-600);
+}
+
+
+
+/*OUTLINE*//*
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline {
+    background: transparent;
+    border: 2px solid;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline {
+    border-color: light-dark(var(--primary-500), var(--primary-400));
+    color: light-dark(var(--primary-500), var(--primary-400)) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:hover {
+    background-color: light-dark(#93d1fd4a, transparent)
+        /*#e8f6ff*//*
+    ;
+    border-color: var(--primary-500);
+    color: var(--primary-500) !important;
+}
+
+/*:is(button, [role=button], input:is([type=submit], [type=reset])).outline.primary:active {
+    background-color: light-dark(#bfe2fe6e, #dbeefe42);
+}*/
+/*
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline {
+    border-color: light-dark(var(--white-400), var(--white-400));
+    color: light-dark(var(--white-400), var(--white-300)) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:hover {
+    border-color: light-dark(var(--white-400), var(--white-300));
+    color: light-dark(var(--white-500), var(--white-200));
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])).outline:active {
+    border-color: light-dark(var(--white-500), var(--white-200));
+    color: light-dark(var(--white-600), var(--white-100));
+}*/
+
+/*BTN TEXT*//*
+:is(button, [role=button], input:is([type=submit], [type=reset])).text {}
+
+:is(button, [role=button], input:is([type=submit], [type=reset]))[aria-busy=true] {
+    cursor: default;
+    background-color: var(--primary-400);
+    color: var(--primary-100) !important;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset]))[aria-busy=true]::before {
+    margin-right: 8px;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])) .me {
+    margin-right: 8px;
+}
+
+:is(button, [role=button], input:is([type=submit], [type=reset])) .ms {
+    margin-left: 8px;
+}
+
+*/
