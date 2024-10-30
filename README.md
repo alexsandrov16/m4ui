@@ -1,5 +1,5 @@
-# M4U
+# M4UI
 
-Material 4 You
+Made 4 User Interface
 
 https://tabler-icons.io/
