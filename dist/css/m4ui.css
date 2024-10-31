@@ -4,18 +4,53 @@
 /* optional imports that use the props */
 @import "https://unpkg.com/open-props/normalize.min.css";
 
-:root{
+/* colors */
+@import "https://unpkg.com/open-props@1.7.7/colors.min.css";
+
+:root {
     color-scheme: light dark;
+    --bg-base-1: light-dark(var(--gray-0), var(--gray-10));
+    --bg-base-2: light-dark(var(--gray-1), var(--gray-9));
+    --bg-base-3: light-dark(var(--gray-2), var(--gray-8));
+
+
+    --color-base: light-dark(var(--gray-8), var(--gray-4));
 }
 
-[data-theme="light"]{
+[data-theme="light"] {
     color-scheme: light;
 }
 
-[data-theme="dark"]{
+[data-theme="dark"] {
     color-scheme: dark;
 }
 
-.container{
-    padding: 0 var(--size-3)
+body {
+    background: var(--bg-base-1);
+    color: var(--color-base);
+}
+
+a{
+    text-decoration: none;
+}
+
+:is(a,button,input)[role="button"]{
+    background: var(--blue-5);
+    border-radius: 5em;
+    color: #fff;
+    display: inline-block;
+    font-size: .75em;
+    font-weight: 700;
+    margin-bottom: var(--size-2);
+    padding: var(--size-2) var(--size-4);
+    text-transform: uppercase;
+    transition: background .15s ease-in-out;
+}
+
+:is(a,button,input)[role="button"]:hover{
+    background: var(--blue-7);
+}
+
+:is(a,button,input)[role="button"].btn-full{
+    width: 100%;
 }
